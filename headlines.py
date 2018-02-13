@@ -10,7 +10,7 @@ RSS_FEEDS = {"zhihu": "https://www.zhihu.com/rss",
             "songshuhui": "http://songshuhui.net/feed",
             "ifeng": "http://news.ifeng.com/rss/index.xml"}
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def get_news():
     query = request.args.get("publication")
     if not query or query.lower() not in RSS_FEEDS:
